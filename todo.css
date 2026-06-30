@@ -48,7 +48,7 @@ input{
     font-weight: 14px;
 }
 
-botton{
+button{
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -64,18 +64,26 @@ ul li{
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
+    position: relative;
 }
 
-ul li ::before {
+ul li::before {
     content: '';
-    position: relative;
+    position: absolute;
     height: 28px;
     width: 28px;
-    border border-radius: 50%;
-    background image: url('images/unchecked.png');
-    backgound-size: cover;
+    border-radius: 50%;
+    background-image: url('images/unchecked.png');
+    background-size: cover;
     background-position: center;
     top: 12px;
     left: 8px;
 
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    background-image: url('images/checked.png');
 }
